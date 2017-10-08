@@ -4,10 +4,6 @@ import Title from './title';
 import Func from './func';
 
 class Structure extends Component {
-    constructor(props) {
-        super(props);
-        console.log(props);
-    }
     render() {
         return (
             <div>

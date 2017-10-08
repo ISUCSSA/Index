@@ -32,7 +32,6 @@ class DogUIISUCSSA extends Component {
     }
 
     mapRoutes(value, index) {
-        console.log(value);
         return <Route
             path={"/" + value.route}
             component={value.component}

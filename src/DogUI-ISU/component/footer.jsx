@@ -33,19 +33,27 @@ class Footer extends Component {
                         <p style={{ fontSize: "14px", margin: "0" }}><strong>Iowa State Universisy</strong></p>
                         <p style={{ fontSize: "14px", margin: "0" }}>Chinese Students & Scholars Association</p>
                         <br />
-                        <p style={{ fontSize: "14px", margin: "0" }}>cssa.isu.ia@gmail.com</p>
-                        <p style={{ fontSize: "14px", margin: "0" }}>2229 Lincoln Way C4 1530 Student Office</p>
+                        <p style={{ fontSize: "14px", margin: "0" }}>
+                            <a href="mailto:cssa.isu.ia@gmail.com"
+                                style={{ color: "#686868" }}>
+                                cssa.isu.ia@gmail.com
+                                </a>
+                        </p>
+                        <p style={{ fontSize: "14px", margin: "0" }}>2229 Lincoln Way C4 1530 Student Office
+                        </p>
                         <p style={{ fontSize: "14px", margin: "0" }}>​Memorial Union Ames, iA 50011-1130</p>
                     </div>
                     <div className="col-3">
-                        <HoverLink icon="wechat" color="#06ad00">Wechat</HoverLink>
-                        <HoverLink icon="weibo" color="#da0000">Weibo</HoverLink>
-                        <HoverLink icon="facebook-square" color="#008ada">Facebook</HoverLink>
-                        <HoverLink icon="instagram" color="#a115ff">Instragram</HoverLink>
+                        <HoverLink icon="wechat" color="#06ad00" href="http://www.isucssa.org/24494204493902938754.html">Wechat</HoverLink>
+                        <HoverLink icon="weibo" color="#da0000" href="http://weibo.com/isucssa">Weibo</HoverLink>
+                        <HoverLink icon="facebook-square" color="#008ada" href="https://www.facebook.com/iaisucssa">Facebook</HoverLink>
+                        <HoverLink icon="instagram" color="#a115ff" href="https://www.instagram.com/isucssa/">Instragram</HoverLink>
                     </div>
                     <div className="col-3">
-                        Copyright © 2017 WMXPY, open sourced under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA 4.0</a> License.
-                </div>
+                        Copyright © 2017 WMXPY, open sourced under a
+                        &nbsp;<a rel="license" style={{ color: "#686868" }} href="http://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA 4.0</a>&nbsp;
+                        License.<br />
+                    </div>
                 </div>
             </div>
         );

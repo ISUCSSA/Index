@@ -6,6 +6,7 @@ class HoverLink extends Component {
         super(props);
         this.handleHover = this.handleHover.bind(this);
         this.releaseHover = this.releaseHover.bind(this);
+        this.hrefTo = this.hrefTo.bind(this);
         this.state = {
             hover: false
         }
@@ -14,6 +15,7 @@ class HoverLink extends Component {
     render() {
         return (
             <div
+                onClick={this.hrefTo}
                 className="row"
                 style={{ fontSize: "30px", paddingBottom: "10px", cursor: "pointer" }}
                 onMouseOver={this.handleHover}
@@ -32,6 +34,14 @@ class HoverLink extends Component {
                 </div>
             </div>
         );
+    }
+
+    hrefTo() {
+        if (this.props.href) {
+            let a = document.createElement("a");
+            a.href = this.props.href;
+            a.click();
+        }
     }
 
     handleHover() {

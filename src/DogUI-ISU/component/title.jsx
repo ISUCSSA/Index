@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Logo from './logo';
+import SearchBar from './searchBar';
 
 class Title extends Component {
     render() {
@@ -29,14 +30,8 @@ class Title extends Component {
                             <p style={{ fontSize: "21px", margin: "0", marginTop: "-10px", cursor: "pointer" }}>Chinese Students & Scholars Association</p>
                             <p style={{ fontSize: "24px", margin: "0", paddingTop: "10px", cursor: "pointer" }}><strong>{this.props.children}</strong></p>
                         </div>
-                        <div style={{ width: "30%", maxWidth: "300px", position: "absolute", right: "0px" }}>
-                            <input
-                                style={{
-                                    width: "100%",
-                                    border: "0px",
-                                    height: "28px"
-                                }}>
-                            </input>
+                        <div style={{ width: "35%", maxWidth: "400px", position: "absolute", right: "0px", textAlign: "right" }}>
+                            <SearchBar />
                         </div>
                     </div>
                 </div>
