@@ -14,8 +14,8 @@ class Opportunities extends Component {
         company: "Introduction of the company, bla bla bla",
         description: ["Some Major", "Some Requirment", "Another Requirment"],
         applyMethod: "web",
-        apply: "https://google.com"
-    },]
+        apply: "google.com"
+    }]
     constructor(props) {
         super(props);
         this.renderList = this.renderList.bind(this);
@@ -39,7 +39,7 @@ class Opportunities extends Component {
             </ul>
             <h4 style={{ margin: "0px", marginTop: "10px" }}>How to apply</h4>
             {HowToApply()} or <br />
-            <ApplyButton />
+            {applyButton()}
             <hr />
         </div>;
 
@@ -48,10 +48,32 @@ class Opportunities extends Component {
                 case "email":
                     return "Send E-mail to " + value.apply;
                 case "web":
-                    return "Visit " + value.apply;
+                    return "Visit http://" + value.apply;
                 default:
                     return null;
             }
+        }
+
+        function applyButton() {
+            let clickFun;
+            switch (value.applyMethod) {
+                case "email":
+                    clickFun = () => {
+                        let a = document.createElement('a');
+                        a.href = "mailto:" + value.apply;
+                        a.click();
+                    }
+                    break;
+                case "web":
+                    clickFun = () => {
+                        window.open("http://" + value.apply)
+                    }
+                    break;
+                default:
+                    return null;
+            }
+            return <ApplyButton onClick={clickFun} />
+
         }
 
         function renderDescription(value, index) {

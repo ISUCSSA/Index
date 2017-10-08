@@ -5,8 +5,9 @@ import DogUIISUCSSA from 'dogui-isu-cssa';
 
 class App extends Component {
   tabs = [
-    { tab: "NEWS", route: "n", component: () => <h2>Some News</h2> },
-    { tab: "OPPORTUNITIES", route: "t", component: Opportunities }
+    { route: "", redirect: "index" },
+    { tab: "INDEX", route: "index", component: () => <h2>Some News</h2> },
+    { tab: "JOB OPENINGS", route: "jobs", component: Opportunities }
   ]
   render() {
     return (

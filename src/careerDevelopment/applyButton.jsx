@@ -15,6 +15,7 @@ class ApplyButton extends Component {
     render() {
         return (
             <button
+                onClick={this.props.onClick}
                 onMouseOver={this.handleHover}
                 onMouseOut={this.releaseHover}
                 style={Object.assign({
