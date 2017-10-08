@@ -3,7 +3,7 @@ import Nav from './nav';
 import Title from './title';
 import Func from './func';
 
-class Topping extends Component {
+class Structure extends Component {
     constructor(props) {
         super(props);
         console.log(props);
@@ -11,7 +11,11 @@ class Topping extends Component {
     render() {
         return (
             <div>
-                <Nav>Directory</Nav>
+                <Nav>
+                    <a style={{ paddingRight: "17px", cursor: "pointer" }}>isucssa.org</a>
+                    <a style={{ paddingRight: "17px", cursor: "pointer" }}>Index</a>
+                    <a style={{ paddingRight: "17px", cursor: "pointer" }}>Directory</a>
+                </Nav>
                 <Title>{this.props.children}</Title>
                 <Func tabs={this.props.tabs} history={this.props.routes.history} />
             </div>
@@ -19,4 +23,4 @@ class Topping extends Component {
     }
 }
 
-export default Topping;
+export default Structure;

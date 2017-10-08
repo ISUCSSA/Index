@@ -7,12 +7,17 @@ class Nav extends Component {
                 width: "100%",
                 backgroundColor: "#333",
                 color: "#ccc",
-                padding: "4px",
-                paddingLeft: "10px",
-                paddingRight: "10px",
+                paddingTop: "5px",
+                paddingBottom: "5px",
                 fontSize: "10px"
             }}>
-                {this.props.children}
+                <div className="row">
+                    <div className="col-2">
+                    </div>
+                    <div className="col-8">
+                        {this.props.children}
+                    </div>
+                </div>
             </div>
         );
     }
