@@ -25,7 +25,7 @@ class Func extends Component {
 
     mapTabs(value, index) {
         const test = () => {
-            this.props.history.push(value.route)
+            this.props.history.replace("/" + value.route)
         }
         return <a style={{ paddingRight: "40px", cursor: "pointer" }} onClick={test} key={index}>{value.tab}</a>
     }

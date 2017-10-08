@@ -1,19 +1,16 @@
 import React, { Component } from 'react';
-import Topping from './DogUI-ISU/topping';
-import { HashRouter, Route } from 'react-router-dom';
+import DogUIISU from './DogUI-ISU/dogui-isu';
 
 
 class App extends Component {
-  tabs = [{ tab: "NEWS", route: "/t" }]
+  tabs = [
+    { tab: "NEWS", route: "n", component: () => <h2>123</h2> },
+    { tab: "TEST", route: "t", component: () => <h2>test</h2> }
+  ]
   render() {
     return (
       <div>
-        <HashRouter>
-          <div>
-            <Route path="/" component={(routes) => <Topping tabs={this.tabs} routes={routes}>DEPARTMENT OF CAREER DEVELOPMENT</Topping>} />
-            <Route path="/t" component={() => <h2>2</h2>} />
-          </div>
-        </HashRouter>
+        <DogUIISU tabs={this.tabs}>DEPARTMENT OF CAREER DEVELOPMENT</DogUIISU>
       </div>
     );
   }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Nav from './component/nav';
-import Title from './component/title';
-import Func from './component/func';
+import Nav from './nav';
+import Title from './title';
+import Func from './func';
 
 class Topping extends Component {
     constructor(props) {
