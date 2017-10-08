@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import DogUIISUCSSA from './DogUI-ISU/dogui-isu-cssa';
+import DogUIISUCSSA from 'dogui-isu-cssa';
 
 
 class App extends Component {
