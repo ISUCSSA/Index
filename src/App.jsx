@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import DogUIISU from './DogUI-ISU/dogui-isu';
+import DogUIISUCSSA from './DogUI-ISU/dogui-isu-cssa';
 
 
 class App extends Component {
@@ -10,7 +10,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <DogUIISU tabs={this.tabs}>DEPARTMENT OF CAREER DEVELOPMENT</DogUIISU>
+        <DogUIISUCSSA tabs={this.tabs}>DEPARTMENT OF CAREER DEVELOPMENT</DogUIISUCSSA>
       </div>
     );
   }

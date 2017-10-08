@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { HashRouter, Route } from 'react-router-dom';
 import Topping from './component/topping';
 
-class DogUIISU extends Component {
+class DogUIISUCSSA extends Component {
 
     constructor(props) {
         super(props);
@@ -25,12 +25,21 @@ class DogUIISU extends Component {
                                 I<span style={{ fontSize: "32px" }}>OWA</span>
                                 S<span style={{ fontSize: "32px" }}>TATE</span>
                             </p>
-                            <p style={{ fontSize: "40px", paddingTop: "10px", margin: "0", color: "#c00" }}>U<span style={{ fontSize: "32px" }}>NIVERSITY</span></p>
-                            <p style={{ fontSize: "24px", margin: "0", paddingTop: "10px" }}><strong>Chinese Students & Scholars Association</strong></p>
+                            <p style={{ fontSize: "40px", paddingTop: "10px", margin: "0", color: "#c00" }}>
+                                U<span style={{ fontSize: "32px" }}>NIVERSITY</span>
+                            </p>
+                            <p style={{ fontSize: "18px", margin: "0", paddingTop: "10px" }}>
+                                Chinese Students &
+                            </p>
+                            <p style={{ fontSize: "18px", margin: "0" }}>
+                                Scholars Association
+                            </p>
                         </div>
                         <div className="col-3">2</div>
                         <div className="col-3">3</div>
-                        <div className="col-3">4</div>
+                        <div className="col-3">
+                            Copyright © 2017 WMXPY, open source under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA 4.0</a> License.
+                        </div>
                     </div>
                 </div>
             </div>
@@ -47,4 +56,4 @@ class DogUIISU extends Component {
     }
 }
 
-export default DogUIISU;
+export default DogUIISUCSSA;
