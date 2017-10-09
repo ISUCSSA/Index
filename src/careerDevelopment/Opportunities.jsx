@@ -30,7 +30,7 @@ class Opportunities extends Component {
     }
 
     renderList(value, index) {
-        return <div key={index}>
+        return <div key={index} style={{ marginBottom: "25px", marginTop: "25px" }}>
             <h3 style={{ margin: "0px" }}>{value.title}</h3>
             <h5 style={{ margin: "0px" }}>{value.company}</h5>
             <h4 style={{ margin: "0px", marginTop: "10px" }}>Job Description</h4>
@@ -40,7 +40,6 @@ class Opportunities extends Component {
             <h4 style={{ margin: "0px", marginTop: "10px" }}>How to apply</h4>
             {HowToApply()} or <br />
             {applyButton()}
-            <hr />
         </div>;
 
         function HowToApply() {
