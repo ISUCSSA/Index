@@ -6,7 +6,6 @@ class ERROR404 extends Component {
         return (
             <div style={{ textAlign: "center" }}>
                 <h2>404 Nothing Found</h2>
-
             </div>
         );
     }

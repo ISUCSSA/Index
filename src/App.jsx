@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import Opportunities from './careerDevelopment/Opportunities';
 import E404 from './common/404';
-import DCy from 'dcy';
-
+import Admin from './common/admin';
+import DCY from 'dcy';
+import DHR from 'dhr';
 
 class App extends Component {
   tabs = [
     { route: "", redirect: "index" },
     { tab: "INDEX", route: "index", component: () => <h2>Some News</h2> },
     { tab: "JOB OPENINGS", route: "jobs", component: Opportunities },
+    { route: "admin", component: Admin },
     { route: "*", component: E404 }
   ]
   navs = [
@@ -18,7 +20,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <DCy
+        <DHR color="rgb(241, 190, 72)" />
+        <DCY
           tabs={this.tabs}
           navs={this.navs}
           source={{ name: "ISUCSSA", link: "https://github.com/ISUCSSA/Index" }}

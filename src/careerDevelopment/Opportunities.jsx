@@ -16,10 +16,16 @@ class Opportunities extends Component {
         applyMethod: "web",
         apply: "google.com"
     }]
+
     constructor(props) {
         super(props);
         this.renderList = this.renderList.bind(this);
     }
+
+    componentWillMount() {
+        window.adog.dhr.done();
+    }
+
     render() {
         return (
             <div>
