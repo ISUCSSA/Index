@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import Opportunities from './careerDevelopment/Opportunities';
-import DogUIISUCSSA from 'dogui-isu-cssa';
+import E404 from './common/404';
+import DCy from 'dcy';
 
 
 class App extends Component {
   tabs = [
     { route: "", redirect: "index" },
     { tab: "INDEX", route: "index", component: () => <h2>Some News</h2> },
-    { tab: "JOB OPENINGS", route: "jobs", component: Opportunities }
+    { tab: "JOB OPENINGS", route: "jobs", component: Opportunities },
+    { route: "*", component: E404 }
   ]
   navs = [
     { nav: "isucssa.org", type: "func", click: () => { window.location.href = "http://isucssa.org" } },
@@ -16,7 +18,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <DogUIISUCSSA
+        <DCy
           tabs={this.tabs}
           navs={this.navs}
           source={{ name: "ISUCSSA", link: "https://github.com/ISUCSSA/Index" }}
