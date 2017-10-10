@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
+import BKI from '../bki/bki';
 
 class Admin extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         return (
             <div>
+                <BKI />
             </div>
         );
     }

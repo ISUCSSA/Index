@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "caperjs": "^2.1.2",
     "dcy": "^1.1.6",
     "dhr": "^1.0.1",
     "react": "^16.0.0",
