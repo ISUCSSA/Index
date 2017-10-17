@@ -15,6 +15,13 @@ class Opportunities extends Component {
         description: ["Some Major", "Some Requirment", "Another Requirment"],
         applyMethod: "web",
         apply: "google.com"
+    },
+    {
+        title: "Supreme Auto",
+        company: "China Iowa Group",
+        description: ["Some Major", "Some Requirment", "Another Requirment"],
+        applyMethod: "web",
+        apply: "supremeauto.com"
     }]
 
     constructor(props) {

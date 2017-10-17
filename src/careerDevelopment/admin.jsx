@@ -6,7 +6,8 @@ class Admin extends Component {
     render() {
         return (
             <div>
-                <BKI />
+                名字<input></input>
+                内容<textarea></textarea>
             </div>
         );
     }

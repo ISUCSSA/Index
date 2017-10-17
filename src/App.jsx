@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Bridge from './srcb/bkbridge';
+import Bridge from 'bkbridge';
 import Career from './careerDevelopment/index';
 import Tech from './tech/index';
 import DHR from 'dhr';
