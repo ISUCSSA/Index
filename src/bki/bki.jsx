@@ -5,7 +5,7 @@ class BKI extends Component {
     render() {
         return (
             <div style={{ textAlign: "center" }}>
-                <h2>404 Nothing Found</h2>
+                <h2>Hello</h2>
             </div>
         );
     }
