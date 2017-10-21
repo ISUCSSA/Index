@@ -1,6 +1,23 @@
 import React, { Component } from 'react';
+import { ajax } from 'caperjs';
 
 class Admin extends Component {
+
+    caper;
+
+    constructor(props) {
+        super(props);
+        this.caper = new ajax("http://localhost:8081/api/career/admin");
+        this.state = {
+            article: {},
+            job: {},
+            event: {}
+        }
+        this.caper.setData({ a: "ssss" });
+        this.caper.post().then((a) => {
+            console.log(a)
+        })
+    }
 
     render() {
         return (
@@ -14,9 +31,15 @@ class Admin extends Component {
                 </div>
                 <div>
                     <h3>展示一份工作</h3>
-                    <label>你要连接的微信文章地址</label><input></input>
+                    <label>工作的名字</label><input></input>
                     <br />
-                    <label>这篇文章应该显示的标题</label><input></input>
+                    <label>公司介绍</label><input></input>
+                    <br />
+                    <label>详情</label><input></input>
+                    <br />
+                    <label>如何申请</label><input></input>
+                    <br />
+                    <label>申请位置</label><input></input>
                     <hr />
                 </div>
                 <div>
@@ -24,7 +47,7 @@ class Admin extends Component {
                     <label>这次活动的名字</label><input></input>
                     <br />
                     <label>活动的说明 (请将你的文章在任意 HTML 编辑网站编辑, 并复制到此处, 比如<a href="http://html-online.com/editor/">这个网站</a>)</label>
-                    <textarea></textarea>
+                    <textarea style={{ width: "100%", height: "400px" }}></textarea>
                 </div>
             </div>
         );
