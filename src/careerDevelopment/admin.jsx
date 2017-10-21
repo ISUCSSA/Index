@@ -81,7 +81,6 @@ class Admin extends Component {
 
     handleInput(args, value) {
         this.state.inputs[args[0]][args[1]] = value;
-        console.log(this.state);
     }
 
 
@@ -108,14 +107,9 @@ class Admin extends Component {
     }
 
     submitEvent() {
-        let caper = new ajax("http://localhost:8081/api/career/articles");
-        // caper.setData(this.state.inputs.event);
-        caper.get().then((a) => {
-            console.log(a)
-        })
-        let q = new ajax("http://localhost:8081");
-        // caper.setData(this.state.inputs.event);
-        q.get().then((a) => {
+        let caper = new ajax("http://localhost:8081/api/career/admin/articles");
+        caper.setData(this.state.inputs.event);
+        caper.post().then((a) => {
             console.log(a)
         })
     }
