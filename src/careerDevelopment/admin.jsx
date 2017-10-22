@@ -108,7 +108,7 @@ class Admin extends Component {
     }
 
     submitEvent() {
-        let caper = new ajax(config.host + "api/career/admin/articles");
+        let caper = new ajax(config.host + "api/career/admin/events");
         caper.setData(this.state.inputs.event);
         caper.post().then((a) => {
             console.log(a)
