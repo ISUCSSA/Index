@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { ajax } from 'caperjs';
+import config from '../config';
 import Input from '../common/input';
 
 class Admin extends Component {
@@ -89,7 +90,7 @@ class Admin extends Component {
     }
 
     submitArticle() {
-        let caper = new ajax("http://localhost:8081/api/career/admin/articles");
+        let caper = new ajax(config.host + "api/career/admin/articles");
         caper.setData(this.state.inputs.article);
         caper.post().then((a) => {
             console.log(a)
@@ -97,7 +98,7 @@ class Admin extends Component {
     }
 
     submitJob() {
-        let caper = new ajax("http://localhost:8081/api/career/admin/jobs");
+        let caper = new ajax(config.host + "api/career/admin/jobs");
         let job = JSON.parse(JSON.stringify(this.state.inputs.job));
         job.detail = JSON.stringify(job.detail);
         caper.setData(job);
@@ -107,7 +108,7 @@ class Admin extends Component {
     }
 
     submitEvent() {
-        let caper = new ajax("http://localhost:8081/api/career/admin/articles");
+        let caper = new ajax(config.host + "api/career/admin/articles");
         caper.setData(this.state.inputs.event);
         caper.post().then((a) => {
             console.log(a)

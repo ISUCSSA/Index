@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import config from '../config';
 import { ajax } from 'caperjs';
 
 class Articles extends Component {
@@ -13,7 +14,7 @@ class Articles extends Component {
     }
 
     componentWillMount() {
-        let a = new ajax("http://localhost:8081/api/career/articles");
+        let a = new ajax(config.host + "api/career/articles");
         a.get().then((e) => {
             this.setState({
                 articles: JSON.parse(e)
