@@ -1,54 +1,45 @@
 import React, { Component } from 'react';
+import config from '../config';
+import { ajax } from 'caperjs';
 import ApplyButton from './applyButton';
 
 class Opportunities extends Component {
-    test = [{
-        title: "Some Job",
-        company: "Introduction of the company, bla bla bla",
-        description: ["Some Major", "Some Requirment", "Another Requirment"],
-        applyMethod: "email",
-        apply: "aaa@gmail.com"
-    },
-    {
-        title: "Another Job",
-        company: "Introduction of the company, bla bla bla",
-        description: ["Some Major", "Some Requirment", "Another Requirment"],
-        applyMethod: "web",
-        apply: "google.com"
-    },
-    {
-        title: "Supreme Auto",
-        company: "China Iowa Group",
-        description: ["Some Major", "Some Requirment", "Another Requirment"],
-        applyMethod: "web",
-        apply: "supremeauto.com"
-    }]
 
     constructor(props) {
         super(props);
         this.renderList = this.renderList.bind(this);
+        this.state = {
+            jobs: []
+        }
     }
 
     componentWillMount() {
-        window.adog.dhr.done();
+        let a = new ajax(config.host + "api/career/jobs");
+        a.get().then((e) => {
+            window.adog.dhr.done();
+            console.log(JSON.parse(e))
+            this.setState({
+                jobs: JSON.parse(e)
+            })
+        })
     }
 
     render() {
         return (
             <div>
                 <h2>Avaiable Job Opportunities from CSSA</h2>
-                {this.test.map(this.renderList)}
+                {this.state.jobs.map(this.renderList)}
             </div>
         );
     }
 
     renderList(value, index) {
         return <div key={index} style={{ marginBottom: "25px", marginTop: "25px" }}>
-            <h3 style={{ margin: "0px" }}>{value.title}</h3>
-            <h5 style={{ margin: "0px" }}>{value.company}</h5>
+            <h3 style={{ margin: "0px" }}>{value.name}</h3>
+            <h5 style={{ margin: "0px" }}>{value.description}</h5>
             <h4 style={{ margin: "0px", marginTop: "10px" }}>Job Description</h4>
             <ul style={{ margin: "5px" }}>
-                {value.description.map(renderDescription)}
+                {value.detail.map(renderDescription)}
             </ul>
             <h4 style={{ margin: "0px", marginTop: "10px" }}>How to apply</h4>
             {HowToApply()} or <br />
