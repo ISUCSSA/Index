@@ -1,24 +1,46 @@
 import React, { Component } from 'react';
-
+import config from '../config';
+import { ajax } from 'caperjs';
 
 class Articles extends Component {
+
+    constructor(props) {
+        super(props);
+        this.renderArticles = this.renderArticles.bind(this);
+        this.jumpToArticle = this.jumpToArticle.bind(this);
+        this.state = {
+            articles: []
+        }
+    }
+
+    componentWillMount() {
+        let a = new ajax(config.host + "api/career/articles");
+        a.get().then((e) => {
+            this.setState({
+                articles: JSON.parse(e)
+            })
+        })
+    }
+
     render() {
         return (
-            <div style={{ textAlign: "center" }}>
-                <div className="row">
-                    <div className="col-md-6"><img src="http://www.desktopwallpaperhd.net/wallpapers/8/7/xiaogoukuanping-animal-tupian-85399.jpg" style={{ height: "100px", width: "100px" }} /></div>
-                    <div className="col-md-6">
-                        <h2><a href="https://mp.weixin.qq.com/s?__biz=MjM5MzU5Nzc4NA==&mid=2652136072&idx=1&sn=bb8b34113ce77f5ce6639e1e0e180e51&chksm=bd7452bf8a03dba9265645eea7445cb99a773e64b3427845dabd70f00b97b1419194ab37fd61#rd">推文1</a></h2>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-md-6"><img src="http://www.desktopwallpaperhd.net/wallpapers/8/7/xiaogoukuanping-animal-tupian-85399.jpg" style={{ height: "100px", width: "100px" }} /></div>
-                    <div className="col-md-6" style={{ textAlign: "left" }}>
-                        <a href="https://mp.weixin.qq.com/s?__biz=MjM5MzU5Nzc4NA==&mid=2652136072&idx=1&sn=bb8b34113ce77f5ce6639e1e0e180e51&chksm=bd7452bf8a03dba9265645eea7445cb99a773e64b3427845dabd70f00b97b1419194ab37fd61#rd">推文1</a>
-                    </div>
-                </div>
+            <div>
+                {this.state.articles.map(this.renderArticles)}
             </div>
         );
+    }
+
+    renderArticles(value, index) {
+        return (
+            <div
+                onClick={this.jumpToArticle.bind(this, value.address)} key={index}>
+                <span>{value.title}</span>
+            </div>
+        )
+    }
+
+    jumpToArticle(q) {
+        window.open(q);
     }
 }
 

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import DCY from 'dcy';
 import Opportunities from './Opportunities';
 import Articles from './articles';
+import Upcoming from './upcoming';
 import Admin from './admin';
 import E404 from '../common/404';
 
@@ -9,7 +10,7 @@ class Career extends Component {
 
     tabs = [
         { route: "", redirect: "upcoming" },
-        { tab: "UPCOMING", route: "upcoming", component: () => <h2>Some News</h2> },
+        { tab: "UPCOMING", route: "upcoming", component: Upcoming },
         { tab: "ARTICLES", route: "articles", component: Articles },
         { tab: "JOB OPENINGS", route: "jobs", component: Opportunities },
         {
