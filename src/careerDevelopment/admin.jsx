@@ -77,16 +77,28 @@ class Admin extends Component {
     }
 
     handleDetail(args, value) {
-        this.state.inputs.job.detail[args] = value;
+        let tempstate = this.state.inputs;
+        tempstate.job.detail[args] = value;
+        this.setState({
+            inputs: tempstate
+        });
     }
 
     handleInput(args, value) {
-        this.state.inputs[args[0]][args[1]] = value;
+        let tempstate = this.state.inputs;
+        tempstate[args[0]][args[1]] = value;
+        this.setState({
+            inputs: tempstate
+        });
     }
 
 
     handleIntro(e) {
-        this.state.inputs.event.intro = e.target.value;
+        let tempstate = this.state.inputs;
+        tempstate.event.intro = e.target.value;
+        this.setState({
+            inputs: tempstate
+        });
     }
 
     submitArticle() {
