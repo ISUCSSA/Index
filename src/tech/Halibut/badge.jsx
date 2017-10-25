@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 
 
-class ERROR404 extends Component {
+class Badge extends Component {
     render() {
         return (
-            <div style={{ textAlign: "center" }}>
-                <h2>404 Nothing Found</h2>
-            </div>
+            <div style={{
+                height: "100%",
+                float: "left",
+                width: "20%",
+                backgroundColor: "lightblue",
+                paddingTop: "10vh"
+            }}></div>
         );
     }
 }
 
-export default ERROR404;
+export default Badge;
