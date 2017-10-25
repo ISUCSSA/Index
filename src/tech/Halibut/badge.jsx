@@ -8,7 +8,7 @@ class Badge extends Component {
                 height: "100%",
                 float: "left",
                 width: "20%",
-                backgroundColor: "lightblue",
+                backgroundColor: this.props.color,
                 paddingTop: "10vh"
             }}></div>
         );
