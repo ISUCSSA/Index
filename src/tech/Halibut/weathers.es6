@@ -9,3 +9,4 @@ const WEATHERS = {
     WIND: "wind",
     BREEZE: "breeze"
 }
+export default WEATHERS;

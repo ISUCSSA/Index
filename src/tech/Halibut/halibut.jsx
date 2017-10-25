@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Badge from './badge';
 import Card from './card';
+import WEATHERS from './weathers.es6';
+import COLORS from './colors.es6';
 
 class Halibut extends Component {
     render() {

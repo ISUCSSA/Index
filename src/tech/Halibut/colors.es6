@@ -1,0 +1,1 @@
+import WEATHERS from './weathers.es6';
