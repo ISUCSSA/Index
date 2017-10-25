@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import Badge from './badge';
 import Card from './card';
-import WEATHERS from './weathers.es6';
-import COLORS from './colors.es6';
+import WEATHERS from './weathers';
+import COLORS from './colors';
 
 class Halibut extends Component {
 
     constructor(props) {
         super(props);
         this.renderColors = this.renderColors.bind(this);
-        console.log(COLORS);
     }
 
     render() {
@@ -22,7 +21,7 @@ class Halibut extends Component {
     }
 
     renderColors(value, index) {
-        return <Badge color={value} />
+        return <Badge color={value} key={index} />
     }
 }
 

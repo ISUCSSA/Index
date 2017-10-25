@@ -1,4 +1,4 @@
-import WEATHERS from './weathers.es6';
+import WEATHERS from './weathers';
 
 export default function (weather) {
     console.log(weather);
