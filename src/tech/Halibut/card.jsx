@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
-
+// backgroundColor: "rgba(255, 255, 255, 0.212)",
 class Card extends Component {
     render() {
         return (
             <div style={{
-                textAlign: "center",
+                transform: "all 0.5s",
                 position: "absolute",
-                color: "white",
                 width: "32vw",
-                minWidth: "480px",
+                minWidth: "400px",
                 height: "25vh",
                 minHeight: "220px",
                 right: "10vh",
                 bottom: "10vh"
             }}>
-                <h2>404 Nothing Found</h2>
+                {this.props.children}
             </div>
         );
     }

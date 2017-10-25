@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Badge from './badge';
 import Card from './card';
 import WEATHERS from './weathers';
@@ -15,7 +16,7 @@ class Halibut extends Component {
         return (
             <div style={{ height: "100vh", }}>
                 {COLORS(this.props.weather).map(this.renderColors)}
-                <Card />
+                <Card>{this.props.children}</Card>
             </div>
         );
     }
@@ -24,5 +25,23 @@ class Halibut extends Component {
         return <Badge color={value} key={index} />
     }
 }
+
+Halibut.propTypes = {
+    weather: PropTypes.oneOf([
+        WEATHERS.SUN,
+        WEATHERS.BREEZE,
+        WEATHERS.CLOUD,
+        WEATHERS.FOG,
+        WEATHERS.HAIL,
+        WEATHERS.RAIN,
+        WEATHERS.SNOW,
+        WEATHERS.STORM,
+        WEATHERS.WIND
+    ])
+};
+
+Halibut.defaultProps = {
+    weather: WEATHERS.SUN
+};
 
 export default Halibut;

@@ -1,12 +1,12 @@
 const WEATHERS = {
-    SUN: "sun",
-    RAIN: "rain",
-    SNOW: "snow",
-    CLOUD: "cloud",
-    FOG: "fog",
-    HAIL: "hail",
-    STORM: "strom",
-    WIND: "wind",
-    BREEZE: "breeze"
+    SUN: "Sunny",
+    RAIN: "Raining",
+    SNOW: "Snowing",
+    CLOUD: "Cloudy",
+    FOG: "Fogging",
+    HAIL: "Hailing",
+    STORM: "Stroming",
+    WIND: "Windy",
+    BREEZE: "Breezeing"
 }
 export default WEATHERS;

@@ -1,7 +1,6 @@
 import WEATHERS from './weathers';
 
 export default function (weather) {
-    console.log(weather);
     switch (weather) {
         case WEATHERS.SUN:
             return ["fff353", "fec039", "fe8c43", "ed6023", "e20909"];
