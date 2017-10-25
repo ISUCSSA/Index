@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Halibut from './Halibut/halibut';
+import Halibut from 'halibuts';
 
 class ERROR404 extends Component {
     render() {
@@ -16,7 +16,6 @@ class ERROR404 extends Component {
                     </div>
                 </Halibut>
             </div>
-
         );
     }
 }
