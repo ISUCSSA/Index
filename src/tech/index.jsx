@@ -6,7 +6,7 @@ class ERROR404 extends Component {
         console.log(WEATHERS)
         return (
             <div style={{ textAlign: "center" }}>
-                <Halibut weather="Windy">
+                <Halibut weather={WEATHERS.RANDOM}>
                     <div style={{
                         backgroundColor: "rgba(255, 255, 255, 0.212)",
                         height: "100%",
