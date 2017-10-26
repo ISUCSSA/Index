@@ -13,8 +13,7 @@ class TechIndex extends Component {
                         width: "100%"
                     }}>
                         <h1 style={{ fontSize: "75px", color: "black", fontWeight: "bold" }}>
-                            Hello<br />
-                            World!
+                            Hello World!
                         </h1>
                     </div>
                 </Halibut>
