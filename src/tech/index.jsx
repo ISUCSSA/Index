@@ -11,7 +11,10 @@ class TechIndex extends Component {
                         height: "100%",
                         width: "100%"
                     }}>
-                        <h1 style={{ fontSize: "75px", color: "white", fontWeight: "bold", paddingTop: "6%" }}>Hello World!</h1>
+                        <h1 style={{ fontSize: "75px", color: "black", fontWeight: "bold" }}>
+                            Hello<br />
+                            World!
+                        </h1>
                     </div>
                 </Halibut>
                 Hello.
