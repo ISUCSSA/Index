@@ -15,7 +15,17 @@ class Career extends Component {
         { tab: "JOB OPENINGS", route: "jobs", component: Opportunities },
         {
             tab: "CONTACT", route: "contact", component: () => {
-                return <div>Phone number: 73109</div>
+                return <div>
+                    <div style={{ fontSize: "25px" }}>
+                        Iowa State University<br />
+                        Chinese Students & Scholars Association<br />
+                        Department of career development<br />
+                    </div>
+                    <div style={{ fontSize: "35px" }}>
+                        Email: isucssacareer@gmail.com<br />
+                        Phone number: 73109
+                    </div>
+                </div>
             }
         },
         { route: "admin", component: Admin },
