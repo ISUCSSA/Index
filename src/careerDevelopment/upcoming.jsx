@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import config from '../config';
 import { ajax } from 'caperjs';
-import {Vote} from './sanma/import';
+import { Vote } from './sanma/import';
 
 class Upcoming extends Component {
 
@@ -9,10 +9,11 @@ class Upcoming extends Component {
         description: 123,
         votes: [{
             description: "test",
+            id: "testPartnet",
             options: [{
                 id: "test",
                 name: "test"
-            },{
+            }, {
                 id: "test",
                 name: "test"
             }]
@@ -44,7 +45,7 @@ class Upcoming extends Component {
                     <h2>{this.state.event.name}</h2>
                 </div>
                 {/**<div dangerouslySetInnerHTML={{ __html: this.state.event.intro }}></div>*/}
-                <Vote votes={this.vot} onSelect={(e)=>console.log(e)}>问卷调查</Vote>
+                <Vote votes={this.vot} onSelect={(e) => console.log(e)} selectable={false}>问卷调查</Vote>
             </div>
         );
     }

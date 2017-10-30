@@ -3,7 +3,7 @@ import propTypes from 'prop-types';
 
 class SanmaVoteOption extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.handleHover = this.handleHover.bind(this);
         this.handleLeave = this.handleLeave.bind(this);
@@ -15,27 +15,27 @@ class SanmaVoteOption extends Component {
 
     render() {
         return (
-            <div style={{width: "100%", cursor: "pointer"}}
-            onMouseEnter={this.handleHover}
-            onMouseLeave={this.handleLeave}
-            onClick={this.handleClick}>
-                <i className="fa fa-circle-o fa-fw" style={{color: this.state.hover?"red":"black"}}/>
+            <div style={{ width: "100%", cursor: "pointer", borderBottom: this.state.hover ? "1px solid black" : "1px solid transparent" }}
+                onMouseEnter={this.handleHover}
+                onMouseLeave={this.handleLeave}
+                onClick={this.handleClick}>
+                <i className="fa fa-circle-o fa-fw" style={{ color: this.state.hover ? "red" : "black" }} />
                 <span>{this.props.children}</span>
             </div>
         );
     }
 
-    handleClick(){
-
+    handleClick() {
+        this.props.onClick(this.props.args);
     }
 
-    handleHover(){
+    handleHover() {
         this.setState({
             hover: true
         });
     }
 
-    handleLeave(){
+    handleLeave() {
         this.setState({
             hover: false
         });
