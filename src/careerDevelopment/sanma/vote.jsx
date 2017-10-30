@@ -13,7 +13,7 @@ class SanmaVote extends Component {
     }
 
     render() {
-        const colors = getColor(WEATHERS.RANDOM);
+        const colors = getColor(this.props.color);
         return (
             <div style={{ fontFamily: this.props.font, userSelect: this.props.selectable ? "" : "none" }}>
                 <div style={{ height: this.props.height + "px", width: "100%" }}>
@@ -58,6 +58,24 @@ class SanmaVote extends Component {
 
 SanmaVote.propTypes = {
     height: propTypes.number,
+    color: propTypes.oneOf([
+        WEATHERS.SUN,
+        WEATHERS.BREEZE,
+        WEATHERS.CLOUD,
+        WEATHERS.FOG,
+        WEATHERS.HAIL,
+        WEATHERS.RAIN,
+        WEATHERS.SNOW,
+        WEATHERS.STORM,
+        WEATHERS.WIND,
+        WEATHERS.RANDOM,
+        WEATHERS.STAR,
+        WEATHERS.TWILIGHT,
+        WEATHERS.MIDNIGHT,
+        WEATHERS.NOVA,
+        WEATHERS.ROSE,
+        WEATHERS.CHAOS
+    ]),
     votes: propTypes.shape({
         description: propTypes.oneOfType([propTypes.string, propTypes.number]).isRequired,
         votes: propTypes.arrayOf(propTypes.shape({
@@ -77,6 +95,7 @@ SanmaVote.propTypes = {
 SanmaVote.defaultProps = {
     height: 30,
     selectable: true,
+    color: WEATHERS.RANDOM,
     font: ""
 };
 
