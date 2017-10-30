@@ -27,7 +27,7 @@ class SanmaVote extends Component {
                 <div style={{ fontSize: "26px", paddingTop: "10px" }}>
                     {this.props.votes.description}
                 </div>
-                <div style={{ fontSize: "20px", paddingTop: "10px" }}>
+                <div style={{ fontSize: "20px" }}>
                     {this.props.votes.votes.map(this.renderVotes)}
                 </div>
             </div>
@@ -42,7 +42,7 @@ class SanmaVote extends Component {
         const renderOptions = (optionValue, index) => {
             return (<VoteOption key={index} onClick={this.handleClick} args={[value.id, optionValue.id]}>{optionValue.name}</VoteOption>)
         }
-        return (<div key={index}>
+        return (<div key={index} style={{ paddingTop: "10px" }}>
             <span style={{ fontSize: "22px", fontWeight: "bold" }}><i className="fa fa-arrow-right fa-fw" />{value.description}</span>
             <div style={{ paddingLeft: "15px" }}>{value.options.map(renderOptions)}</div>
         </div>);

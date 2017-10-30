@@ -6,8 +6,18 @@ import { Vote } from './sanma/import';
 class Upcoming extends Component {
 
     vot = {
-        description: 123,
+        description: "这是一个测试问卷调查，选中选项的功能已经被禁用",
         votes: [{
+            description: "测试问题1",
+            id: "testPartnet",
+            options: [{
+                id: "test",
+                name: "测试选项1"
+            }, {
+                id: "test",
+                name: "测试选项2"
+            }]
+        }, {
             description: "test",
             id: "testPartnet",
             options: [{
