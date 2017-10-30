@@ -14,7 +14,7 @@ class Input extends Component {
     }
 
     handleInput(e) {
-        this.props.onChange(this.props.args, e.target.value)
+        this.props.onChange(this.props.args, e.target.value);
     }
 }
 

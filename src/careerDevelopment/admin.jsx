@@ -18,7 +18,7 @@ class Admin extends Component {
                     intro: ""
                 }
             }
-        }
+        };
         this.handleInput = this.handleInput.bind(this);
         this.handleIntro = this.handleIntro.bind(this);
         this.handleDetail = this.handleDetail.bind(this);

@@ -39,13 +39,13 @@ class Upcoming extends Component {
 
     componentWillMount() {
         let a = new ajax(config.host + "api/career/events");
-        // a.get().then((e) => {
-        //     window.adog.dhr.done();
-        //     console.log(e);
-        //     this.setState({
-        //         event: JSON.parse(e)
-        //     })
-        // })
+        a.get().then((e) => {
+            window.adog.dhr.done();
+            console.log(e);
+            this.setState({
+                event: JSON.parse(e)
+            })
+        })
     }
 
     render() {
