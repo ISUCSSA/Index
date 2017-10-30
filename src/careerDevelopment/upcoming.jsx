@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import config from '../config';
 import { ajax } from 'caperjs';
-import { Vote } from './sanma/import';
+import { Vote } from 'sanma';
 
 class Upcoming extends Component {
 
