@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import getColor, {WEATHERS} from '../chaetodon/import';
+import VoteOption from './voteOption';
 import propTypes from 'prop-types';
 
 class SanmaVote extends Component {
@@ -22,8 +23,12 @@ class SanmaVote extends Component {
                         {this.props.children}
                     </div>
                 </div>
-                {this.props.votes.description}
-                {this.props.votes.votes.map(this.renderVotes)}
+                <div style={{fontSize: "26px", paddingTop: "10px"}}>
+                    {this.props.votes.description}
+                </div>
+                <div style={{fontSize: "20px", paddingTop: "10px"}}>
+                    {this.props.votes.votes.map(this.renderVotes)}
+                </div>
             </div>
         );
     }
@@ -34,15 +39,11 @@ class SanmaVote extends Component {
 
     renderVotes(value, index){
         const renderOptions = (value, index)=>{
-            return (
-            <div key={index}>
-                {value.id}
-                {value.name}
-            </div>)
+            return (<VoteOption key={index}>{value.name}</VoteOption>)
         }
         return (<div key={index}>
-            {value.description}
-            {value.options.map(renderOptions)}
+            <span style={{fontSize: "22px", fontWeight: "bold"}}><i className="fa fa-arrow-right fa-fw"/>{value.description}</span>
+            <div style={{paddingLeft: "15px"}}>{value.options.map(renderOptions)}</div>
         </div>);
     }
 }
@@ -59,6 +60,7 @@ SanmaVote.propTypes = {
                 })).isRequired
         })).isRequired
     }).isRequired,
+    onSelect: propTypes.func.isRequired,
     font: propTypes.string
 }
 
