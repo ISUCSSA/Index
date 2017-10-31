@@ -24,7 +24,9 @@ class Articles extends Component {
 
     render() {
         return (
-            <div>
+            <div style={{ paddingTop: "15px" }}>
+                <div style={{ fontSize: "30px" }}>我们的文章牛逼的一批</div>
+                <hr />
                 {this.state.articles.map(this.renderArticles)}
             </div>
         );
@@ -33,8 +35,13 @@ class Articles extends Component {
     renderArticles(value, index) {
         return (
             <div
-                onClick={this.jumpToArticle.bind(this, value.address)} key={index}>
+                style={{ width: "100%", fontSize: "26px", cursor: "pointer" }}
+                onClick={this.jumpToArticle.bind(this, value.address)}
+                key={index}>
                 <span>{value.title}</span>
+                <br />
+                <span style={{ fontSize: "18px" }}>Author: {value.author}</span>
+                <hr />
             </div>
         )
     }

@@ -5,6 +5,8 @@ import Input from '../common/input';
 
 class Admin extends Component {
 
+    password;
+
     constructor(props) {
         super(props);
         this.state = {
@@ -38,6 +40,8 @@ class Admin extends Component {
                         <label>你要连接的微信文章地址</label><Input onChange={this.handleInput} args={["article", "address"]}></Input>
                         <br />
                         <label>这篇文章应该显示的标题</label><Input onChange={this.handleInput} args={["article", "title"]}></Input>
+                        <br />
+                        <label>文章的作者</label><Input onChange={this.handleInput} args={["article", "author"]}></Input>
                         <br />
                         <button onClick={this.submitArticle}>提交文章</button>
                         <hr />
@@ -87,11 +91,15 @@ class Admin extends Component {
     }
 
     submitPassword() {
-
+        if (this.password === "123") {
+            this.setState({
+                display: true
+            });
+        }
     }
 
     handlePassword(e) {
-
+        this.password = e.target.value;
     }
 
     handleDetail(args, value) {
