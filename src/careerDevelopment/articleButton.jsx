@@ -7,6 +7,7 @@ class ArticleButton extends Component {
         super(props);
         this.handleHover = this.handleHover.bind(this);
         this.handleLeave = this.handleLeave.bind(this);
+        this.jumpToArticle = this.jumpToArticle.bind(this);
         this.state = {
             hover: false
         }
