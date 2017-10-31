@@ -8,7 +8,6 @@ class Articles extends Component {
     constructor(props) {
         super(props);
         this.renderArticles = this.renderArticles.bind(this);
-        this.jumpToArticle = this.jumpToArticle.bind(this);
         this.state = {
             articles: []
         }
@@ -37,10 +36,6 @@ class Articles extends Component {
         return (
             <ArticleButton value={value} key={index} />
         )
-    }
-
-    jumpToArticle(q) {
-        window.open(q);
     }
 }
 

@@ -16,7 +16,7 @@ class ArticleButton extends Component {
         return (
             <div
                 style={{ width: "100%", fontSize: "26px", cursor: "pointer", color: this.state.hover ? "blue" : "" }}
-                onClick={this.jumpToArticle.bind(this, this.props.value.address)}
+                onClick={this.jumpToArticle}
                 onMouseEnter={this.handleHover}
                 onMouseLeave={this.handleLeave}>
                 <span>{this.props.value.title}</span>
@@ -25,6 +25,10 @@ class ArticleButton extends Component {
                 <hr />
             </div>
         );
+    }
+
+    jumpToArticle() {
+        window.open(this.props.value.address);
     }
 
     handleHover() {
