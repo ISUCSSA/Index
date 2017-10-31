@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import config from '../config';
+import ArticleButton from './articleButton';
 import { ajax } from 'caperjs';
 
 class Articles extends Component {
@@ -34,15 +35,7 @@ class Articles extends Component {
 
     renderArticles(value, index) {
         return (
-            <div
-                style={{ width: "100%", fontSize: "26px", cursor: "pointer" }}
-                onClick={this.jumpToArticle.bind(this, value.address)}
-                key={index}>
-                <span>{value.title}</span>
-                <br />
-                <span style={{ fontSize: "18px" }}>Author: {value.author}</span>
-                <hr />
-            </div>
+            <ArticleButton value={value} key={index} />
         )
     }
 

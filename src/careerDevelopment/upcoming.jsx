@@ -41,7 +41,6 @@ class Upcoming extends Component {
         let a = new ajax(config.host + "api/career/events");
         a.get().then((e) => {
             window.adog.dhr.done();
-            console.log(e);
             this.setState({
                 event: JSON.parse(e)
             })
@@ -54,12 +53,17 @@ class Upcoming extends Component {
                 <div style={{ textAlign: "center" }}>
                     <h2>{this.state.event.name}</h2>
                 </div>
-                <div dangerouslySetInnerHTML={{ __html: this.state.event.intro }}></div>
+                <div
+                    style={{ fontSize: "18px" }}
+                    dangerouslySetInnerHTML={{ __html: this.state.event.intro }}>
+                </div>
                 <hr />
                 <Vote
                     votes={this.vot}
                     onSubmit={(e) => console.log(e)}
-                    selectable={false}>问卷调查</Vote>
+                    selectable={false}>
+                    问卷调查
+                </Vote>
             </div>
         );
     }
