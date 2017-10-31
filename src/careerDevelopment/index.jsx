@@ -33,7 +33,7 @@ class Career extends Component {
     ]
     navs = [
         { nav: "isucssa.org", type: "func", click: () => { window.location.href = "http://isucssa.org" } },
-        { nav: "Index", type: "route", click: "index" }
+        { nav: "Index", type: "func", click: () => { window.location.href = "http://demo.mipha.io/example" } }
     ]
     source = { name: "ISUCSSA", link: "https://github.com/ISUCSSA/Index" };
     info = {
@@ -56,6 +56,7 @@ class Career extends Component {
                 source={this.source}
                 info={this.info}
                 pre={this.props.pre}
+                key="career"
             />
         );
     }
