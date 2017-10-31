@@ -5,7 +5,7 @@ import InputOption from './inputOption'
 import propTypes from 'prop-types';
 
 class SanmaVote extends Component {
-
+    colors = getColor(this.props.color);
     constructor(props) {
         super(props);
         this.renderBadge = this.renderBadge.bind(this);
@@ -24,12 +24,11 @@ class SanmaVote extends Component {
     }
 
     render() {
-        const colors = getColor(this.props.color);
         return (
             <div style={{ fontFamily: this.props.font, userSelect: this.props.selectable ? "" : "none" }}>
                 <div style={{ height: this.props.height + "px", width: "100%" }}>
                     <div style={{ width: "15%", height: "100%", float: "left" }}>
-                        {colors.map(this.renderBadge)}
+                        {this.colors.map(this.renderBadge)}
                     </div>
                     <div style={{ width: "auto", height: "100%", float: "left", fontSize: this.props.height - 8 + "px", fontWeight: "bold", paddingLeft: "10px" }}>
                         {this.props.children}
@@ -73,6 +72,7 @@ class SanmaVote extends Component {
             <div key={index} style={{ paddingTop: "10px" }}>
                 <span style={{ fontSize: "22px", fontWeight: "bold" }}><i className="fa fa-arrow-right fa-fw" />{value.description}</span>
                 <InputOption
+                    colors={this.colors}
                     style={{ width: "100%" }}
                     onInput={this.handleClick}
                     controller={this.state.controller[value.id]}
@@ -90,6 +90,8 @@ class SanmaVote extends Component {
             return (<VoteOption
                 key={index}
                 onClick={this.handleClick}
+                id={optionValue.id}
+                colors={this.colors}
                 controller={this.state.controller[value.id]}
                 args={[value.id, optionValue.id]}>
                 {optionValue.name}
@@ -102,10 +104,11 @@ class SanmaVote extends Component {
     }
 
     handleClick(args) {
-        this.props.onSelect({
-            vote: args[0],
-            option: args[1]
-        })
+        let temp = this.state.controller;
+        temp[args[0]] = args[1];
+        this.setState({
+            controller: this.state.controller
+        });
     }
 
     handleSubmit() {
@@ -160,7 +163,6 @@ SanmaVote.propTypes = {
             })).isRequired
     }).isRequired,
     selectable: propTypes.bool,
-    onSelect: propTypes.func.isRequired,
     onSubmit: propTypes.func.isRequired,
     font: propTypes.string
 }

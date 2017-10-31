@@ -9,12 +9,12 @@ class Upcoming extends Component {
         description: "这是一个测试问卷调查，选中选项的功能已经被禁用",
         votes: [{
             description: "测试问题1",
-            id: "testPartnet",
+            id: "testPartnet1",
             options: [{
                 id: "test",
                 name: "测试选项1"
             }, {
-                id: "test",
+                id: "test2",
                 name: "测试选项2"
             }]
         }, { description: "inputTest", id: "input", options: "input" }, {
@@ -24,8 +24,8 @@ class Upcoming extends Component {
                 id: "test",
                 name: "test"
             }, {
-                id: "test",
-                name: "test"
+                id: "test2",
+                name: "test2"
             }]
         }]
     }
@@ -58,8 +58,7 @@ class Upcoming extends Component {
                 <hr />
                 <Vote
                     votes={this.vot}
-                    onSelect={(e) => console.log(e)}
-                    onSubmit={() => console.log("s")}
+                    onSubmit={(e) => console.log(e)}
                     selectable={false}>问卷调查</Vote>
             </div>
         );

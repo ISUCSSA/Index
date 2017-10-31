@@ -22,7 +22,12 @@ class SanmaInputOption extends Component {
 SanmaInputOption.propTypes = {
     onInput: propTypes.func.isRequired,
     args: propTypes.any.isRequired,
-    controller: propTypes.string.isRequired
+    controller: propTypes.string.isRequired,
+    colors: propTypes.arrayOf(propTypes.string).isRequired
+}
+
+SanmaInputOption.defaultProps = {
+    colors: ["FF0000", "FF0000", "FF0000", "FF0000", "FF0000"]
 }
 
 export default SanmaInputOption;
