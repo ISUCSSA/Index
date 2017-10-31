@@ -1,5 +1,5 @@
 index:
-	npm start
-
-build:
 	npm run build
+
+dev:
+	npm start
