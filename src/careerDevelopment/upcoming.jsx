@@ -56,7 +56,11 @@ class Upcoming extends Component {
                 </div>
                 <div dangerouslySetInnerHTML={{ __html: this.state.event.intro }}></div>
                 <hr />
-                <Vote votes={this.vot} onSelect={(e) => console.log(e)} selectable={false}>问卷调查</Vote>
+                <Vote
+                    votes={this.vot}
+                    onSelect={(e) => console.log(e)}
+                    onSubmit={() => console.log("s")}
+                    selectable={false}>问卷调查</Vote>
             </div>
         );
     }

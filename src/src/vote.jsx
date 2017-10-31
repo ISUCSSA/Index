@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import getColor, { WEATHERS } from 'chaetodon';
 import VoteOption from './voteOption';
+import InputOption from './inputOption'
 import propTypes from 'prop-types';
 
 class SanmaVote extends Component {
@@ -12,9 +13,14 @@ class SanmaVote extends Component {
         this.renderInput = this.renderInput.bind(this);
         this.handleClick = this.handleClick.bind(this);
         this.renderElement = this.renderElement.bind(this);
+        this.generateController = this.generateController.bind(this);
         this.state = {
             isDone: false
         };
+    }
+
+    componentWillMount() {
+        this.generateController();
     }
 
     render() {
@@ -39,6 +45,16 @@ class SanmaVote extends Component {
         );
     }
 
+    generateController() {
+        let temp = {};
+        for (let i = 0; i < this.props.votes.votes.length; i++) {
+            temp[this.props.votes.votes[i].id] = "";
+        }
+        this.setState({
+            controller: temp
+        })
+    }
+
     renderElement(value, index) {
         switch (value.options) {
             case "input":
@@ -56,7 +72,11 @@ class SanmaVote extends Component {
         return (
             <div key={index} style={{ paddingTop: "10px" }}>
                 <span style={{ fontSize: "22px", fontWeight: "bold" }}><i className="fa fa-arrow-right fa-fw" />{value.description}</span>
-                <input style={{ width: "100%" }} />
+                <InputOption
+                    style={{ width: "100%" }}
+                    onInput={this.handleClick}
+                    controller={this.state.controller[value.id]}
+                    args={value.id} />
             </div>
         )
     }
@@ -67,7 +87,13 @@ class SanmaVote extends Component {
 
     renderVotes(value, index) {
         const renderOptions = (optionValue, index) => {
-            return (<VoteOption key={index} onClick={this.handleClick} args={[value.id, optionValue.id]}>{optionValue.name}</VoteOption>)
+            return (<VoteOption
+                key={index}
+                onClick={this.handleClick}
+                controller={this.state.controller[value.id]}
+                args={[value.id, optionValue.id]}>
+                {optionValue.name}
+            </VoteOption>)
         }
         return (<div key={index} style={{ paddingTop: "10px" }}>
             <span style={{ fontSize: "22px", fontWeight: "bold" }}><i className="fa fa-arrow-right fa-fw" />{value.description}</span>
@@ -80,6 +106,10 @@ class SanmaVote extends Component {
             vote: args[0],
             option: args[1]
         })
+    }
+
+    handleSubmit() {
+        this.props.onSubmit();
     }
 }
 
@@ -131,6 +161,7 @@ SanmaVote.propTypes = {
     }).isRequired,
     selectable: propTypes.bool,
     onSelect: propTypes.func.isRequired,
+    onSubmit: propTypes.func.isRequired,
     font: propTypes.string
 }
 

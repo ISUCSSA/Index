@@ -6,31 +6,23 @@ class SanmaInputOption extends Component {
     constructor(props) {
         super(props);
         this.handleClick = this.handleClick.bind(this);
-        this.state = {
-            hover: false
-        };
     }
 
     render() {
         return (
-            <div style={{ width: "100%", cursor: "pointer", borderBottom: this.state.hover ? "1px solid black" : "1px solid transparent" }}
-                onMouseEnter={this.handleHover}
-                onMouseLeave={this.handleLeave}
-                onClick={this.handleClick}>
-                <i className="fa fa-circle-o fa-fw" style={{ color: this.state.hover ? "red" : "black" }} />
-                <span>{this.props.children}</span>
-            </div>
+            <input style={{ width: "100%" }} onInput={this.handleClick} />
         );
     }
 
-    handleClick() {
-        this.props.onClick(this.props.args);
+    handleClick(e) {
+        this.props.onInput([this.props.args, e.target.value]);
     }
 }
 
 SanmaInputOption.propTypes = {
-    onClick: propTypes.func.isRequired,
-    args: propTypes.any.isRequired
+    onInput: propTypes.func.isRequired,
+    args: propTypes.any.isRequired,
+    controller: propTypes.string.isRequired
 }
 
 export default SanmaInputOption;

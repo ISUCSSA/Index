@@ -44,7 +44,8 @@ class SanmaVoteOption extends Component {
 
 SanmaVoteOption.propTypes = {
     onClick: propTypes.func.isRequired,
-    args: propTypes.any.isRequired
+    args: propTypes.any.isRequired,
+    controller: propTypes.string.isRequired
 }
 
 export default SanmaVoteOption;
