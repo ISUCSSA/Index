@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import config from '../config';
 import { ajax } from 'caperjs';
-import { Vote } from 'sanma';
+import Vote from '../src/vote';
 
 class Upcoming extends Component {
 
@@ -17,7 +17,7 @@ class Upcoming extends Component {
                 id: "test",
                 name: "测试选项2"
             }]
-        }, {
+        }, { description: "inputTest", id: "input", options: "input" }, {
             description: "test",
             id: "testPartnet",
             options: [{
