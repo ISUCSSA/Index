@@ -11,6 +11,7 @@ class Admin extends Component {
         super(props);
         this.state = {
             display: false,
+            success: false,
             inputs: {
                 article: {},
                 job: {
@@ -81,7 +82,7 @@ class Admin extends Component {
                         <button onClick={this.submitEvent}>提交活动</button>
                     </div>
                 </div>
-                    : <div>
+                    : this.state.success ? <div>DONE</div> : <div>
                         <label>这个页面需要密码才能查看</label><br />
                         <input onChange={this.handlePassword} type="password" style={{ width: "100%" }} />
                         <button onClick={this.submitPassword}>提交</button>
@@ -131,6 +132,10 @@ class Admin extends Component {
         let caper = new ajax(config.host + "api/career/admin/articles");
         caper.setData(this.state.inputs.article);
         caper.post().then((a) => {
+            this.setState({
+                success: true,
+                display: false,
+            })
             console.log(a)
         })
     }
@@ -141,6 +146,10 @@ class Admin extends Component {
         job.detail = JSON.stringify(job.detail);
         caper.setData(job);
         caper.post().then((a) => {
+            this.setState({
+                success: true,
+                display: false,
+            })
             console.log(a)
         })
     }
@@ -149,6 +158,10 @@ class Admin extends Component {
         let caper = new ajax(config.host + "api/career/admin/events");
         caper.setData(this.state.inputs.event);
         caper.post().then((a) => {
+            this.setState({
+                success: true,
+                display: false,
+            })
             console.log(a)
         })
     }

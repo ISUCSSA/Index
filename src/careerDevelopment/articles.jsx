@@ -27,7 +27,7 @@ class Articles extends Component {
             <div style={{ paddingTop: "15px" }}>
                 <div style={{ fontSize: "30px" }}>我们的文章牛逼的一批</div>
                 <hr />
-                {this.state.articles.map(this.renderArticles)}
+                {this.state.articles.reverse().map(this.renderArticles)}
             </div>
         );
     }

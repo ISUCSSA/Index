@@ -28,7 +28,7 @@ class Opportunities extends Component {
         return (
             <div>
                 <h2>Avaiable Job Opportunities from CSSA</h2>
-                {this.state.jobs.map(this.renderList)}
+                {this.state.jobs.reverse().map(this.renderList)}
             </div>
         );
     }
