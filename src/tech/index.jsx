@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
-import Halibut, { WEATHERS } from 'halibuts';
+import Halibut, { WEATHERS } from '../src/import';
+import { Video } from '../alewife/src/index';
 import { Logo } from 'dcy';
 
 class TechIndex extends Component {
     render() {
         return (
             <div style={{ textAlign: "center" }}>
+                <Video />
+
                 <Halibut weather={WEATHERS.RANDOM} corner={() => <Logo width="120" />}>
                     <div style={{
                         backgroundColor: "rgba(255, 255, 255, 0.212)",
