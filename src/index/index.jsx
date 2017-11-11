@@ -5,9 +5,8 @@ import DCY from 'dcy';
 class Career extends Component {
 
     tabs = [
-        { route: "", redirect: "index" },
         {
-            tab: "INDEX", route: "index", full: true, component: () => <Video loop
+            route: "", full: true, component: () => <Video loop
                 muted
                 src={{ src: "https://www.tesla.com/ns_videos/homepage-video-summer-2017.mp4?20170808", type: "mp4" }}
 
@@ -16,8 +15,7 @@ class Career extends Component {
                     <h1 style={{ color: "white", fontSize: "5vw", textAlign: "center" }}>加入CSSA，一个人干一个部门的活！</h1>
                 </Banner>
             </Video>
-        },
-        { tab: "Hello", route: "hello", component: () => <h1>Hello World</h1> }
+        }
     ]
     navs = [
         { nav: "isucssa.org", type: "func", click: () => { window.location.href = "http://isucssa.org" } },
@@ -26,7 +24,6 @@ class Career extends Component {
     source = { name: "ISUCSSA", link: "https://github.com/ISUCSSA/Index" };
     info = {
         sub: "Chinese Students & Scholars Association",
-        department: "example department",
         email: "example@example.com",
         address: "2229 Lincoln Way C4 1530 Student Office",
         address2: "Memorial Union Ames, IA 50011-1130",
