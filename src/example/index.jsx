@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Video, Banner } from '../alewife/src/index'
+import { Video, Banner } from 'alewife'
 import DCY from 'dcy';
 
 class Career extends Component {

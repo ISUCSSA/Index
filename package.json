@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "alewife": "^1.0.0",
     "bkbridge": "^2.0.0",
     "caperjs": "^2.1.3",
     "chaetodon": "^1.0.0",
