@@ -55,8 +55,7 @@ class Upcoming extends Component {
                 </div>
                 <div
                     style={{ fontSize: "18px" }}
-                    dangerouslySetInnerHTML={{ __html: this.state.event.intro }}>
-                </div>
+                    dangerouslySetInnerHTML={{ __html: this.state.event.intro }} />
                 <hr />
                 <Vote
                     votes={this.vot}
