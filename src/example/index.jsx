@@ -9,9 +9,8 @@ class Career extends Component {
         {
             tab: "INDEX", route: "index", full: true, component: () => <Video loop
                 muted
-                src={[
-                    "https://www.destinythegame.com/content/dam/atvi/bungie/destiny2/home/hero/D2_EP1_Cinemagraph_1920_21s-10-30-17.webm",
-                    "https://www.destinythegame.com/content/dam/atvi/bungie/destiny2/home/hero/D2_EP1_Cinemagraph_1920_21s-10-30-17.mp4"]}
+                src={{ src: "https://www.tesla.com/ns_videos/homepage-video-summer-2017.mp4?20170808", type: "mp4" }}
+
                 poster="https://www.destinythegame.com/content/dam/atvi/bungie/destiny2/home/hero/ep-1-hero-1440.jpg">
                 <Banner>
                     <h1 style={{ color: "white", fontSize: "100px", textAlign: "center" }}>加入CSSA，一个人干一个部门的活！</h1>
