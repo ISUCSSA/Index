@@ -1,11 +1,23 @@
 import React, { Component } from 'react';
+import { Video, Banner } from '../alewife/src/index'
 import DCY from 'dcy';
 
 class Career extends Component {
 
     tabs = [
         { route: "", redirect: "index" },
-        { tab: "INDEX", route: "index", component: () => <h1>Hello Index</h1> },
+        {
+            tab: "INDEX", route: "index", full: true, component: () => <Video loop
+                muted
+                src={[
+                    "https://www.destinythegame.com/content/dam/atvi/bungie/destiny2/home/hero/D2_EP1_Cinemagraph_1920_21s-10-30-17.webm",
+                    "https://www.destinythegame.com/content/dam/atvi/bungie/destiny2/home/hero/D2_EP1_Cinemagraph_1920_21s-10-30-17.mp4"]}
+                poster="https://www.destinythegame.com/content/dam/atvi/bungie/destiny2/home/hero/ep-1-hero-1440.jpg">
+                <Banner>
+                    <h1 style={{ color: "white", fontSize: "100px", textAlign: "center" }}>Hello World</h1>
+                </Banner>
+            </Video>
+        },
         { tab: "Hello", route: "hello", component: () => <h1>Hello World</h1> }
     ]
     navs = [

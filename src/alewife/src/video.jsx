@@ -1,52 +1,33 @@
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
-import Source from './source';
+import RawVideo from './rawVideo';
 
 class AlewifeVideo extends Component {
 
-    constructor(props) {
-        super(props);
-        this.renderSources = this.renderSources.bind(this);
-    }
-
     render() {
         return (
-            <video playsInline={this.props.playsInline}
-                autoPlay={this.props.autoPlay}
-                muted={this.props.muted}
-                loop={this.props.loop}
-                width={this.props.width}
-                height={this.props.height}
-                poster={this.props.poster}>
-                {this.renderSources()}
-            </video>
+            <div style={{ position: "relative", height: "100%" }}>
+                <RawVideo
+                    playsInline={this.props.playsInline}
+                    autoPlay={this.props.autoPlay}
+                    muted={this.props.muted}
+                    loop={this.props.loop}
+                    src={this.props.src}
+                    width={this.props.width}
+                    height={this.props.height}
+                    poster={this.props.poster}
+                />
+                <div style={{
+                    position: "absolute",
+                    width: "100%",
+                    height: "100%",
+                    left: "0px",
+                    top: "0px"
+                }}>
+                    {this.props.children}
+                </div>
+            </div>
         );
-    }
-
-    renderSources() {
-        if (!Boolean(this.props.src)) throw new Error("'src' is required attr for AlewifeVideo");
-        if (this.props.src.map) {
-            return this.props.src.map(renderS);
-        } else {
-            return renderS(this.props.src, null);
-        }
-        function renderS(value, index) {
-            let src = "";
-            let type = "";
-            if (value.src) {
-                src = value.src;
-                type = value.type;
-            } else {
-                let index = value.lastIndexOf(".");
-                src = value;
-                type = value.substring(index + 1, value.length);
-            }
-            if (index == null) {
-                return <Source src={src} type={type} />;
-            } else {
-                return <Source src={src} type={type} key={index} />;
-            }
-        }
     }
 
 }
