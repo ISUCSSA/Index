@@ -5,6 +5,7 @@ import Example from './example/index';
 import Index from './index/index';
 import Tech from './tech/index';
 import DHR from 'dhr';
+import './app.css';
 
 
 class App extends Component {

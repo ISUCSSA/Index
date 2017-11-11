@@ -1,20 +1,10 @@
 import React, { Component } from 'react';
-import { Video, Banner } from 'alewife'
+import Banner from './banner';
 import DCY from 'dcy';
 
 class Career extends Component {
 
-    tabs = {
-        route: "", full: true, component: () => <Video loop
-            muted
-            src={{ src: "https://www.tesla.com/ns_videos/homepage-video-summer-2017.mp4?20170808", type: "mp4" }}
-
-            poster="https://www.destinythegame.com/content/dam/atvi/bungie/destiny2/home/hero/ep-1-hero-1440.jpg">
-            <Banner>
-                <h1 style={{ color: "white", fontSize: "5vw", textAlign: "center" }}>加入CSSA，一个人干一个部门的活！</h1>
-            </Banner>
-        </Video>
-    }
+    tabs = { route: "", full: true, component: Banner }
     navs = [
         { nav: "isucssa.org", type: "func", click: () => { window.location.href = "http://isucssa.org" } },
         { nav: "Index", type: "route", click: "index" }
