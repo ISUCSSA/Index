@@ -14,7 +14,7 @@ class Career extends Component {
                     "https://www.destinythegame.com/content/dam/atvi/bungie/destiny2/home/hero/D2_EP1_Cinemagraph_1920_21s-10-30-17.mp4"]}
                 poster="https://www.destinythegame.com/content/dam/atvi/bungie/destiny2/home/hero/ep-1-hero-1440.jpg">
                 <Banner>
-                    <h1 style={{ color: "white", fontSize: "100px", textAlign: "center" }}>Hello World</h1>
+                    <h1 style={{ color: "white", fontSize: "100px", textAlign: "center" }}>加入CSSA，一个人干一个部门的活！</h1>
                 </Banner>
             </Video>
         },
