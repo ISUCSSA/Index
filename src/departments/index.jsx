@@ -5,17 +5,15 @@ class Career extends Component {
 
     tabs = {
         route: "", full: true, component: () =>
-            <div style={{ fontSize: "3vw", height: "30vh", backgroundColor: "orange" }} >
-                <div className="row">
-                    <div className="col-sm-4">
-                        <button className="bannerButton" onClick={() => window.location.href = './career'}>Career / 职业发展部</button>
-                    </div>
-                    <div className="col-sm-4">
-                        <button className="bannerButton" onClick={() => window.location.href = './tech'}>Tech / 技术部</button>
-                    </div>
-                    <div className="col-sm-4">
-                        <button className="bannerButton" onClick={() => window.location.href = './example'}>Example / 例子部</button>
-                    </div>
+            <div>
+                <div style={{ fontSize: "3vw", height: "35vh", backgroundColor: "orange" }} >
+                    <button className="bannerButton" onClick={() => window.location.href = '/career'} style={{ width: "100%", height: "100%" }}>Career / 职业发展部</button>
+                </div>
+                <div style={{ fontSize: "3vw", height: "35vh", backgroundColor: "blue" }} >
+                    <button className="bannerButton" onClick={() => window.location.href = '/tech'} style={{ width: "100%", height: "100%" }}>Tech / 技术部</button>
+                </div>
+                <div style={{ fontSize: "3vw", height: "35vh", backgroundColor: "green" }} >
+                    <button className="bannerButton" onClick={() => window.location.href = '/example'} style={{ width: "100%", height: "100%" }}>Example / 一个例子</button>
                 </div>
             </div>
     }
@@ -26,7 +24,7 @@ class Career extends Component {
     source = { name: "ISUCSSA", link: "https://github.com/ISUCSSA/Index" };
     info = {
         sub: "Chinese Students & Scholars Association",
-        email: "example@example.com",
+        email: "cssa.isu.ia@gmail.com",
         address: "2229 Lincoln Way C4 1530 Student Office",
         address2: "Memorial Union Ames, IA 50011-1130",
         wechat: "http://www.isucssa.org/24494204493902938754.html",

@@ -12,7 +12,7 @@ class Career extends Component {
     source = { name: "ISUCSSA", link: "https://github.com/ISUCSSA/Index" };
     info = {
         sub: "Chinese Students & Scholars Association",
-        email: "example@example.com",
+        email: "cssa.isu.ia@gmail.com",
         address: "2229 Lincoln Way C4 1530 Student Office",
         address2: "Memorial Union Ames, IA 50011-1130",
         wechat: "http://www.isucssa.org/24494204493902938754.html",
