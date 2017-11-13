@@ -15,10 +15,10 @@ class IndexBanner extends Component {
                         <span style={{ paddingLeft: "3vw", fontSize: "2vw" }}>查看CSSA各个部门的最新进展 / Lookup latest upcoming of CSSA</span>
                         <div className="row">
                             <div className="col-sm-4 col-sm-offset-2">
-                                <button className="bannerButton" onClick={() => window.location.href = '/departments'}>Departments / 部门列表</button>
+                                <button className="bannerButton bannerButtonMain" onClick={() => window.location.href = '/departments'}>Departments<br />部门列表</button>
                             </div>
                             <div className="col-sm-4">
-                                <button className="bannerButton" onClick={() => window.location.href = '/contect'}>Contect / 联系我们</button>
+                                <button className="bannerButton" onClick={() => window.location.href = '/contect'}>Contect<br />联系我们</button>
                             </div>
                         </div>
                     </div>
