@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Logo } from 'dcy';
 import { Video } from 'alewife'
 
 class IndexBanner extends Component {
@@ -12,10 +11,7 @@ class IndexBanner extends Component {
                     muted
                     src={{ src: "https://www.destinythegame.com/content/dam/atvi/bungie/destiny2/home/hero/D2_EP1_Cinemagraph_1920_21s-10-30-17.webm", type: "mp4" }}
                     poster="https://www.destinythegame.com/content/dam/atvi/bungie/destiny2/home/hero/ep-1-hero-1440.jpg">
-                    <div style={{ paddingLeft: "2vw", paddingTop: "2vw", position: "absolute" }}>
-                        <Logo />
-                    </div>
-                    <div style={{ fontSize: "3vw", color: "white", paddingTop: "15%" }} >
+                    <div style={{ fontSize: "3vw", color: "white", paddingTop: "35%" }} >
                         <span style={{ paddingLeft: "3vw", fontSize: "2vw" }}>查看CSSA各个部门的最新进展 / Lookup latest upcoming of CSSA</span>
                         <div className="row">
                             <div className="col-sm-4 col-sm-offset-2">
