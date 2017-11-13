@@ -9,9 +9,11 @@ class IndexBanner extends Component {
             <div style={{ backgroundColor: "rgba(204, 204, 204, 0.075)" }}>
                 <Video loop
                     muted
+                    align="bottom"
+                    full={false}
                     src={{ src: "https://www.destinythegame.com/content/dam/atvi/bungie/destiny2/home/hero/D2_EP1_Cinemagraph_1920_21s-10-30-17.webm", type: "mp4" }}
                     poster="https://www.destinythegame.com/content/dam/atvi/bungie/destiny2/home/hero/ep-1-hero-1440.jpg">
-                    <div style={{ fontSize: "3vw", color: "white", paddingTop: "35%" }} >
+                    <div style={{ fontSize: "3vw", color: "white", marginBottom: "4%" }} >
                         <span style={{ paddingLeft: "3vw", fontSize: "2vw" }}>查看CSSA各个部门的最新进展 / Lookup latest upcoming of CSSA</span>
                         <div className="row">
                             <div className="col-sm-4 col-sm-offset-2">
